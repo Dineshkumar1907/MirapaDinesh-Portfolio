@@ -121,7 +121,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="Message"
               required
-              className="peer min-h-[150px] w-full rounded-xl border border-gray-200 bg-white px-4 pt-4 text-gray-900 placeholder-transparent focus:border-[#2E71FE] focus:outline-none transition-all shadow-sm"
+              className="peer min-h-[+60px] w-full rounded-xl border border-gray-200 bg-white px-4 pt-4 text-gray-900 placeholder-transparent focus:border-[#2E71FE] focus:outline-none transition-all shadow-sm"
             />
             <label
               htmlFor="message"
