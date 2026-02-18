@@ -40,18 +40,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center bg-white py-20 mt-60">
+    <section id="contact" className="min-h-screen flex items-center justify-center bg-white py-20 mt-30">
       <div className="w-full max-w-xl px-4">
         {/* Heading */}
-        <h1 className="text-center playfair font-bold text-5xl text-black underline decoration-[#2E71FE] underline-offset-8 mb-12 max-sm:text-3xl">
+        <h1 className="text-center playfair font-bold text-5xl text-black underline decoration-[#2E71FE] underline-offset-8 mb-12 max-sm:text-3xl" data-aos="fade-up">
           Contact
         </h1>
 
         {/* Form Container */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6 bg-white p-8">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6 bg-white p-8" data-aos="fade-up">
           
           {/* Name Input Block */}
-          <div className="relative w-full">
+          <div className="relative w-full" >
             <input
               type="text"
               id="name"
@@ -64,8 +64,8 @@ const Contact = () => {
             <label
               htmlFor="name"
               className={`absolute left-4 transition-all duration-200 pointer-events-none text-gray-400 
-                          peer-focus:top-[-10px] peer-focus:left-3 peer-focus:text-xs peer-focus:text-[#2E71FE] peer-focus:bg-white peer-focus:px-2 
-                          ${formData.name ? 'top-[-10px] left-3 text-xs text-[#2E71FE] bg-white px-2' : 'top-4 text-base'}`}
+                          peer-focus:-top-2.5 peer-focus:left-3 peer-focus:text-xs peer-focus:text-[#2E71FE] peer-focus:bg-white peer-focus:px-2 
+                          ${formData.name ? '-top-2.5 left-3 text-xs text-[#2E71FE] bg-white px-2' : 'top-4 text-base'}`}
             >
               Full Name
             </label>
@@ -85,8 +85,8 @@ const Contact = () => {
             <label
               htmlFor="email"
               className={`absolute left-4 transition-all duration-200 pointer-events-none text-gray-400 
-                          peer-focus:top-[-10px] peer-focus:left-3 peer-focus:text-xs peer-focus:text-[#2E71FE] peer-focus:bg-white peer-focus:px-2 
-                          ${formData.email ? 'top-[-10px] left-3 text-xs text-[#2E71FE] bg-white px-2' : 'top-4 text-base'}`}
+                          peer-focus:-top-2.5 peer-focus:left-3 peer-focus:text-xs peer-focus:text-[#2E71FE] peer-focus:bg-white peer-focus:px-2 
+                          ${formData.email ? '-top-2.5 left-3 text-xs text-[#2E71FE] bg-white px-2' : 'top-4 text-base'}`}
             >
               Email Address
             </label>
@@ -106,8 +106,8 @@ const Contact = () => {
             <label
               htmlFor="subject"
               className={`absolute left-4 transition-all duration-200 pointer-events-none text-gray-400 
-                          peer-focus:top-[-10px] peer-focus:left-3 peer-focus:text-xs peer-focus:text-[#2E71FE] peer-focus:bg-white peer-focus:px-2 
-                          ${formData.subject ? 'top-[-10px] left-3 text-xs text-[#2E71FE] bg-white px-2' : 'top-4 text-base'}`}
+                          peer-focus:-top-2.5 peer-focus:left-3 peer-focus:text-xs peer-focus:text-[#2E71FE] peer-focus:bg-white peer-focus:px-2 
+                          ${formData.subject ? '-top-2.5 left-3 text-xs text-[#2E71FE] bg-white px-2' : 'top-4 text-base'}`}
             >
               Subject
             </label>
@@ -121,13 +121,13 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="Message"
               required
-              className="peer min-h-[+60px] w-full rounded-xl border border-gray-200 bg-white px-4 pt-4 text-gray-900 placeholder-transparent focus:border-[#2E71FE] focus:outline-none transition-all shadow-sm"
+              className="peer min-h-16 w-full rounded-xl border border-gray-200 bg-white px-4 pt-4 text-gray-900 placeholder-transparent focus:border-[#2E71FE] focus:outline-none transition-all shadow-sm"
             />
             <label
               htmlFor="message"
               className={`absolute left-4 transition-all duration-200 pointer-events-none text-gray-400 
-                          peer-focus:top-[-10px] peer-focus:left-3 peer-focus:text-xs peer-focus:text-[#2E71FE] peer-focus:bg-white peer-focus:px-2 
-                          ${formData.message ? 'top-[-10px] left-3 text-xs text-[#2E71FE] bg-white px-2' : 'top-4 text-base'}`}
+                          peer-focus:-top-2.5 peer-focus:left-3 peer-focus:text-xs peer-focus:text-[#2E71FE] peer-focus:bg-white peer-focus:px-2 
+                          ${formData.message ? '-top-2.5 left-3 text-xs text-[#2E71FE] bg-white px-2' : 'top-4 text-base'}`}
             >
               Your Message
             </label>

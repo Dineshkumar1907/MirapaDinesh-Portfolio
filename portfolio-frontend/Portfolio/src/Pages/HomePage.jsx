@@ -1,12 +1,36 @@
 import React from 'react'
 import { useState } from 'react';
+import { useEffect } from 'react';
 import Header from '../Components/Header'
 import Footer from '../Components/Footer';
 import Contact from '../Components/Contact';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-  function HomePage() {
-  // 1. ADD THIS STATE
+
+function HomePage() {
+
   const [formData, setFormData] = useState({ name: '', email: '', subject: '' });
+  const [selectedProject, setSelectedProject] = React.useState(null);
+
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+
+
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      offset: 100,
+    });
+  }, []);
+
+  const [showMore, setShowMore] = React.useState(false);
+
+
+
 
   // 2. ADD THIS FUNCTION
   const handleChange = (e) => {
@@ -22,11 +46,11 @@ import Contact from '../Components/Contact';
       <section id="home">
         <div className="min-h-screen  flex items-center justify-center space-x-30 max-md:space-x-15  max-sm:flex-col bg-white">
           <div className="space-y-2.5 max-md:space-y-1 max-sm: -ml-10 max-sm:mb-10">
-            <p className="poppins text-5xl text-[#3e3e3e] max-md:text-2xl max-sm:text-3xl">Hi</p>
-            <p className="poppins text-5xl text-[#3e3e3e] max-md:text-2xl max-sm:text-3xl">I&apos;m <span className="text-[#2E71FE]">Dinesh</span></p>
-            <p className="poppins text-5xl text-[#3e3e3e] max-md:text-2xl max-sm:text-3xl">Jr.Frontend</p>
-            <p className="poppins text-5xl text-[#3e3e3e] max-md:text-2xl max-sm:text-3xl">Web Developer</p>
-            <div className="flex gap-4 pt-6 max-sm:gap-1">
+            <p className="poppins text-5xl text-[#3e3e3e] max-md:text-2xl max-sm:text-3xl" data-aos="fade-up">Hi</p>
+            <p className="poppins text-5xl text-[#3e3e3e] max-md:text-2xl max-sm:text-3xl" data-aos="fade-up" >I&apos;m <span className="text-[#2E71FE]" data-aos="fade-up">Dinesh</span></p>
+            <p className="poppins text-5xl text-[#3e3e3e] max-md:text-2xl max-sm:text-3xl" data-aos="fade-up">Jr.Frontend</p>
+            <p className="poppins text-5xl text-[#3e3e3e] max-md:text-2xl max-sm:text-3xl" data-aos="fade-up">Web Developer</p>
+            <div className="flex gap-4 pt-6 max-sm:gap-1" data-aos="fade-up">
               <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" className="max-sm:h-5">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
               </svg>
@@ -37,22 +61,22 @@ import Contact from '../Components/Contact';
           </div>
 
           <div>
-            <img className="h-80 rounded-tr-[100px] rounded-bl-[100px] max-md:h-50 max-sm:h-60 max-sm:rounded-xl max-sm:" src="./Images/dp.jpg" alt="" />
+            <img className="h-80 rounded-tr-[100px] rounded-bl-[100px] max-md:h-50 max-sm:h-60 max-sm:rounded-xl max-sm:" data-aos="fade-up" src="./Images/dp.jpg" alt="" />
           </div>
         </div>
       </section>
 
       <section id="about" className="scroll-mt-20">
         <div>
-          <h1 className="text-center playfair font-bold text-5xl text-black underline decoration-[#2E71FE] max-sm:text-3xl max-sm:pb-20">About</h1>
+          <h1 className="text-center playfair font-bold text-5xl text-black underline decoration-[#2E71FE] max-sm:text-3xl max-sm:pb-20" data-aos="fade-up">About</h1>
           <div className="min-h-screen  flex items-center justify-center space-x-20 max-md:space-x-15 max-sm:flex-col " >
             <div>
-              <img className="h-100 rounded-xl  max-md:h-50 max-sm:h-80 max-sm:rounded-xl max-sm:ml-15 -mt-70" src="./Images/pfp.jpg" alt="" />
+              <img className="h-100 rounded-xl  max-md:h-50 max-sm:h-80 max-sm:rounded-xl max-sm:ml-15 -mt-70" src="./Images/pfp.jpg" alt="" data-aos="fade-up" />
             </div>
             <div className="w-90 space-y-2 -mt-40 max-sm:mt-0.5">
-              <h1 className="text-3xl poppins1 max-sm:text-center max-sm:text-xl max-sm:pt-3.5">I’m Dinesh Kumar</h1>
+              <h1 className="text-3xl poppins1 max-sm:text-center max-sm:text-xl max-sm:pt-3.5" data-aos="fade-up">I’m Dinesh Kumar</h1>
 
-              <p className="oswald max-sm:text-center max-sm:text-sm text-lg"> A front-end developer focused on building clean, responsive user interfaces with HTML, CSS, JavaScript, React.js, and Tailwind CSS. I’ve worked on real projects like a blockchain-based electronic health records app and a responsive e-commerce furniture website, creating reusable components and integrating with backend services.</p>
+              <p className="oswald max-sm:text-center max-sm:text-sm text-lg" data-aos="fade-up"> A front-end developer focused on building clean, responsive user interfaces with HTML, CSS, JavaScript, React.js, and Tailwind CSS. I’ve worked on real projects like a blockchain-based electronic health records app and a responsive e-commerce furniture website, creating reusable components and integrating with backend services.</p>
 
               {/* <p className="oswald max-sm:text-center max-sm:text-sm text-xl">I’m looking for a Junior Frontend Developer role where I can turn designs into polished, user-friendly web experiences and grow while contributing to production-quality UI.</p> */}
             </div>
@@ -63,19 +87,19 @@ import Contact from '../Components/Contact';
       <section id="skills" className="scroll-mt-20 max-sm:-mt-40 -my-30">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="inline-block text-5xl font-bold text-black underline decoration-[#2E71FE] pb-1 playfair max-sm:text-3xl">
+            <h2 className="inline-block text-5xl font-bold text-black underline decoration-[#2E71FE] pb-1 playfair max-sm:text-3xl" data-aos="fade-up">
               Skills
             </h2>
           </div>
 
           <div className="flex flex-col md:flex-row items-start justify-between gap-10">
             <div className="flex-1 w-full space-y-6">
-              <h3 className="text-3xl  text-black poppins max-sm:text-xl max-sm:text-center max-sm:-mt-5">Professional Skills</h3>
-              <p className="text-black text-lg leading-relaxed oswald max-sm:text-sm max-sm:text-center">
+              <h3 className="text-3xl  text-black poppins max-sm:text-xl max-sm:text-center max-sm:-mt-5" data-aos="fade-up">Professional Skills</h3>
+              <p className="text-black text-lg leading-relaxed oswald max-sm:text-sm max-sm:text-center" data-aos="fade-up">
                 Im a passionate front-end developer with a strong foundation in HTML5, CSS3, Javascript react.js and tailwind Css. I thrive on translating design concepts into responsive, user-friendly web interfaces, and I’ve demonstrated this through projects like login-page prototypes and mini projects and freelance projects . With attention to clean semantic markup, modern styling, and interactive scripting, I continuously refine my front-end craft and am ready to bring polished, functional web experiences to your team.
               </p>
 
-              <div className="space-y-4 pt-4">
+              <div className="space-y-4 pt-4" data-aos="fade-up">
                 {[
                   {
                     name: "HTML5",
@@ -130,15 +154,15 @@ import Contact from '../Components/Contact';
 
 
                 ].map((skill) => (
-                  <div key={skill.name} className="relative bg-white shadow-lg rounded-xl p-2 flex items-center justify-between border border-gray-100 overflow-hidden">
-                    <div className="flex items-center gap-2 z-10">
+                  <div key={skill.name} className="relative bg-white shadow-lg rounded-xl p-2 flex items-center justify-between border border-gray-100 overflow-hidden ">
+                    <div className="flex items-center gap-2 z-10 ">
                       {/* Custom SVG Icon Container */}
                       <div className="flex items-center justify-center">
                         {skill.icon}
                       </div>
-                      <span className="font-bold text-gray-700 poppins">{skill.name}</span>
+                      <span className=" text-gray-700 poppins">{skill.name}</span>
                     </div>
-                    <span className="font-bold text-gray-800 z-10">{skill.percentage}</span>
+                    <span className=" text-gray-800 z-10 poppins">{skill.percentage}</span>
 
                     {/* Blue Progress Indicator */}
                     <div
@@ -150,21 +174,139 @@ import Contact from '../Components/Contact';
               </div>
             </div>
 
-            <div className="flex-1 w-full">
+            <div className="flex-1 w-full" data-aos="fade-up">
               <img
                 src="./Images/web dev.jpg"
                 alt="Professional working"
-                className="w-full h-[400px] object-cover rounded-2xl shadow-xl mt-30 max-sm:-mt-1 max-sm:h-60 max-sm:w-80 max-sm:ml-3"
+                className="w-full h-[96] object-cover rounded-2xl shadow-xl mt-30 max-sm:-mt-1 max-sm:h-60 max-sm:w-80 max-sm:ml-3"
               />
             </div>
           </div>
         </div>
       </section>
-      <section>
-        
+
+
+
+
+      <section id="work" className="mt-80 px-4 bg-white scroll-mt-20">
+        <div className="text-center mb-16" data-aos="fade-up">
+          <h2 className="text-4xl font-bold text-black inline-block border-b-4 border-[#2E71FE] pb-2 tracking-wider">
+            Work
+          </h2>
+        </div>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* Card 1 */}
+          <div data-aos="fade-up" className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+            <img src="./Images/ss1.png" className="w-full h-80 transition-transform duration-500 group-hover:scale-110" alt="Cozy" />
+            <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6 text-center">
+              <h3 className="text-2xl  mb-2 poppins">MediaMarkHub</h3>
+              <p className="text-sm mb-4">A simple user friendly single page web application for a mediaMarkHub-startup . </p>
+              <button
+                onClick={() => setSelectedProject({
+                  name: "Cozy",
+                  desc: "A premium food delivery platform built with React and Tailwind CSS.",
+                  gallery: [
+                    "./Images/ss1.png",
+                    "./Images/ss2.png",
+                    "./Images/ss3.png",
+                    "./Images/ss4.png",
+                    "./Images/ss5.png"
+
+                  ]
+                })}
+                className="border-2 border-white px-4 py-2 hover:bg-white rounded-2xl hover:text-black transition-all cursor-pointer"
+              >
+                View Project
+              </button>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div data-aos="fade-up" className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer">
+            <img src="./Images/gs1.jpeg" className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" alt="DSR" />
+            <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6 text-center">
+              <h3 className="text-2xl font-bold mb-2">Greenscape Solutions</h3>
+              <p className="text-sm mb-4">A multi page web application for Land and gardenscaping startup</p>
+              <button
+                onClick={() => setSelectedProject({
+                  name: "DSR Concept",
+                  desc: "Modern e-commerce solution focused on smooth digital transactions.",
+                  gallery: [
+                    "./Images/gs1.jpeg",
+                    "./Images/gs2.jpeg",
+                    "./Images/gs3.jpeg",
+                    "./Images/gs4.jpeg",
+                  ]
+                })}
+                className="border-2 border-white px-4 py-2 hover:bg-white rounded-2xl hover:text-black transition-all cursor-pointer"
+              >
+                View Project
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* THE MODAL - SINGLE LARGE IMAGE + ARROWS [web:237] */}
+        {selectedProject && (
+          <div className="fixed inset-0 z-100 flex items-center justify-center bg-[#ffffff4a]  backdrop-blur-sm">
+            <div className="bg-white rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative shadow-2xl">
+
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-6 text-4xl text-gray-400 hover:text-red-500 transition-colors z-10 cursor-pointer"
+              >
+                &times;
+              </button>
+
+              {/* Project Title & Description */}
+              {/* <div className="p-8 md:p-10 pb-4">
+                <h2 className="text-4xl font-bold text-[#2E71FE] mb-2">{selectedProject.name}</h2>
+                <p className="text-gray-600 text-lg leading-relaxed">{selectedProject.desc}</p>
+              </div> */}
+
+              {/* Navigation Arrows */}
+              <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20">
+                <button
+                  onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? selectedProject.gallery.length - 1 : prev - 1))}
+                  className="bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-gray-800 text-2xl font-bold transition-all hover:scale-110 cursor-pointer"
+                >
+                  ‹
+                </button>
+              </div>
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 z-20">
+                <button
+                  onClick={() => setCurrentImageIndex((prev) => (prev === selectedProject.gallery.length - 1 ? 0 : prev + 1))}
+                  className="bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-gray-800 text-2xl font-bold transition-all hover:scale-110 cursor-pointer"
+                >
+                  ›
+                </button>
+              </div>
+
+              {/* LARGE CENTRAL IMAGE [web:237] */}
+              <div className="flex items-center justify-center h-[150] md:h-[150]  ">
+                <img
+                  src={selectedProject.gallery[currentImageIndex]}
+                  alt={`Screenshot ${currentImageIndex + 1}`}
+                  className="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                />
+              </div>
+
+              {/* Image Counter */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm z-10">
+                {currentImageIndex + 1} / {selectedProject.gallery.length}
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
-    <Contact></Contact>
+
+
+
+
+      <Contact></Contact>
     </div>
     <Footer></Footer>
   </>)
